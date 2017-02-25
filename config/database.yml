@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: spajic_production
-  username: spajic
+  database: spajic-db
+  username: ubuntu
   password: <%= ENV['SPAJIC_DATABASE_PASSWORD'] %>
