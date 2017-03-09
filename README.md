@@ -1,24 +1,10 @@
-# README
+# SPAJIC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overmind
+use overmind to start all necessary processes, listed in Procfile
 
-Things you may want to cover:
+prereqs: overmind in /usr/local/bin, tmux
 
-* Ruby version
+start: overmind d
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+connect tmux to one of overminded processes: overmind connect web
