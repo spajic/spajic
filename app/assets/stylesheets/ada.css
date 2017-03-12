@@ -315,28 +315,6 @@ ul {
   color: #000;
 }
 
-@media (max-width: 767px) {
-  .navbar-ada .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
-  }
-  .navbar-ada .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-ada .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
-    background-color: transparent;
-  }
-  .navbar-ada .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-ada .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-ada .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555;
-    background-color: #e7e7e7;
-  }
-  .navbar-ada .navbar-nav .open .dropdown-menu > .disabled > a,
-  .navbar-ada .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .navbar-ada .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
-    background-color: transparent;
-  }
-}
 .navbar-ada .navbar-link {
   color: #777;
 }
@@ -357,33 +335,32 @@ fieldset[disabled] .navbar-ada .btn-link:focus {
   color: #ccc;
 }
 
-@media (min-width: 768px) {
-  .navbar-nav {
-    float: left;
-    margin: 0;
-  }
-  .navbar-nav > li {
-    float: left;
-  }
-  .navbar-nav > li > a {
-    padding: 0;
-    margin: 15px 30px;
-  }
-
-  .navbar-brand {
-    padding-top: 35px;
-    padding-bottom: 35px;
-  }
-  .navbar .navbar-nav {
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-  }
-
-  .navbar .navbar-collapse {
-      text-align: center;
-  }
+.navbar-nav {
+  float: left;
+  margin: 0;
 }
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding: 0;
+  margin: 15px 30px;
+}
+
+.navbar-brand {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-center {
+    text-align: center;
+}
+
 
 /***********************************************
 * Posts
