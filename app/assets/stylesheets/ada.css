@@ -584,6 +584,12 @@ fieldset[disabled] .navbar-ada .btn-link:focus {
   padding-bottom: 40px;
 }
 
+#single .caption .fixed_height .img-responsive {
+  display: block;
+  max-height: 100px;
+  margin: auto;
+}
+
 #single .header {
   text-align: center;
   margin-bottom: 40px;
