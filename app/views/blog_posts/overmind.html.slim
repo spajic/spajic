@@ -1,1 +1,90 @@
-h1 OVERMIND IS HERE
+#single
+  .container
+    .post
+      .caption.header
+        span.post-tag #ruby-on-rails
+        h1 Foreman to Overmind, или от прораба к надмозгу
+        =image_tag("blog/overmind/overmind_sketch.png", class: 'img-responsive')
+
+      .section
+        h2 Foreman-school
+        p Rails-приложения обычно состоят из нескольких процессов, например:
+
+        ul
+          li web: сервер приложения rails
+          li workers: фоновые задачи (например, resque workers)
+          li scheduler: планировщик фоновых задач, (например, resque scheduler)
+          li assets: процесс для сборки frontend'a (например, webpack-dev-server)
+          li watcher: процесс, отслеживающий изменения проекта (например, guard для тестов)
+
+        p Удобно запускать, останавливать, перезапускать эти процессы одной командой и в одном терминале.
+
+        p Для этого часто используют <a href='https://github.com/ddollar/foreman'>foreman</a>, но у него есть пара проблем.
+
+      .section
+        h2 Что-то не так с foreman'ом
+        p Foreman объединяет вывод всех управляемых процессов в единую кучy, в которой может искажаться цветной вывод процессов, теряться читаемость.
+
+        p Но, самое главное, нельзя взаимодействовать с отдельным процессом. А значит, <strong>с Foreman невозможно дебажить</strong>!
+
+      .section
+        h2 Overmind решает вопросы
+        p Overmind позволяет решить проблемы foreman.
+
+        p Он использует <a href='https://en.wikipedia.org/wiki/Pseudoterminal'>pty</a> для перехвата и точного повторения вывода процессов.
+
+        p Но, главное, он <strong>запускает процессы в сессии <a href='https://tmux.github.io/'>tmux</a>, даёт возможность подключаться и взаимодействовать с ними. Ура, с Overmind можно дебажить.</strong>
+
+        p Получается так:
+        =image_tag "blog/overmind/overmind_session_screenshot.png", class: 'img-responsive'
+
+      .section
+        h2 Использование
+
+        h3 Готовим Procfile
+
+        p Нужен такой же Procfile, как у Foreman или <a href='https://devcenter.heroku.com/articles/procfile'>Heroku</a>, например:
+
+        blockquote
+          |web: bin/rails server -p 3000<br>
+          |workers: bundle exec resque-pool --environment development<br>
+          |scheduler: bin/rake resque:scheduler<br>
+          |assets: bin/webpack-dev-server --config config/webpack.config.js<br>
+          |watcher: bundle exec guard<br>
+
+
+        h3 Работаем с процессами
+        ul
+          li <strong>overmind s</strong> - (start) запуск всех процессов
+          li <strong>overmind c web</strong> - (connect) tmux к процессу web для взаимодействия с ним
+          li <strong>ctrl + b, d</strong> - отключение от процесса tmux
+          li <strong>overmind r web</strong> - (restart) перезапуск одного из процессов
+          li <strong>overmind k</strong> - (kill) - остановка всех процессов
+
+        p Лучше не делать вложенных tmux-сессий. То есть `overmind connect` нужно запускать из терминала, но не из tmux.
+
+      .section
+        h2 Установка
+        p Для работы потребуется установить tmux и сам overmind
+
+        h3 tmux
+
+        h4 on macOS (with homebrew)
+        blockquote brew install tmux
+
+        h4 on Ubuntu
+        blockquote apt-get install tmux
+
+        p Для других операционных систем инструкции по установке можно поискать здесь: https://github.com/tmux/tmux
+
+        h3 overmind
+        p Скачать <a href='https://github.com/DarthSim/overmind/releases/latest'>последний релиз</a> и положить в /usr/local/bin
+
+        p Либо установить из исходников на Go:
+        blockquote go get -u -f github.com/DarthSim/overmind
+
+      .section
+        h2 Hivemind?
+        p Overmind делает работу с Procfile удобной, приводит в порядок общий лог, позволяет подключаться к отдельным процессам и дебажить.
+
+        p Если присоединяться к процессам нет необходимости, а аккуратный лог всё же хочется, то есть ещё <a href='https://github.com/DarthSim/hivemind'>hivemind</a>
