@@ -1,18 +1,18 @@
 ruby:
-  img_1_tag = image_tag('photos/stub-1.jpg', class: 'img-responsive')
+  img_1_tag = image_tag('blog/overmind/overmind_sketch_2.png', class: 'img-responsive')
   img_2_tag = image_tag('photos/stub-2.jpg', class: 'img-responsive')
 
 #posts.container
   section.col-md-12
     .post.big
       .row
-        .col-md-6.media= img_1_tag
+        .col-md-6.media.caption= img_1_tag
 
         .col-md-6.caption
-          span.post-tag #начало
-          a.post-title Скоро здесь будет первый пост
-          span.post-date 27 февраля 2017
-          p.post-description Не терпится начать
+          span.post-tag #ruby-on-rails
+          = link_to 'Foreman to Overmind, или от прораба к надмозгу',blog_post_path(post_slug: 'overmind'), class: 'post-title'
+          span.post-date 19 марта 2017
+          p.post-description Использование Foreman не позволяет отлаживать процессы rails-приложения. Overmind это может.
 
 
   section.col-md-12

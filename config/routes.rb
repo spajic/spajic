@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   end
 
   scope controller: :blog_posts do
-    get '/blog/:post_slug', action: 'show'
+    get '/blog/:post_slug', action: 'show', as: :blog_post
   end
 end
