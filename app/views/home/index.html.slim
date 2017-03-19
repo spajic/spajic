@@ -1,0 +1,27 @@
+ruby:
+  img_1_tag = image_tag('photos/stub-1.jpg', class: 'img-responsive')
+  img_2_tag = image_tag('photos/stub-2.jpg', class: 'img-responsive')
+
+#posts.container
+  section.col-md-12
+    .post.big
+      .row
+        .col-md-6.media= img_1_tag
+
+        .col-md-6.caption
+          span.post-tag #начало
+          a.post-title Скоро здесь будет первый пост
+          span.post-date 27 февраля 2017
+          p.post-description Не терпится начать
+
+
+  section.col-md-12
+    .post.big
+      .row
+        .col-md-6.caption
+          span.post-tag #продолжение
+          a.post-title И второй
+          span.post-date 28 февраля 2017
+          p.post-description Не терпится продолжить
+
+        .col-md-6.media= img_2_tag
