@@ -19,7 +19,7 @@
 
         p Удобно запускать, останавливать, перезапускать эти процессы одной командой и в одном терминале.
 
-        p Для этого часто используют <a href='https://github.com/ddollar/foreman'>foreman</a>, но у него есть пара проблем.
+        p Для этого часто используют <a href='https://github.com/ddollar/foreman', target='_blank'>foreman</a>, но у него есть пара проблем.
 
       .section
         h2 Что-то не так с foreman'ом
@@ -31,9 +31,9 @@
         h2 Overmind решает вопросы
         p Overmind позволяет решить проблемы foreman.
 
-        p Он использует <a href='https://en.wikipedia.org/wiki/Pseudoterminal'>pty</a> для перехвата и точного повторения вывода процессов.
+        p Он использует <a href='https://en.wikipedia.org/wiki/Pseudoterminal', target='_blank'>pty</a> для перехвата и точного повторения вывода процессов.
 
-        p Но, главное, он <strong>запускает процессы в сессии <a href='https://tmux.github.io/'>tmux</a>, даёт возможность подключаться и взаимодействовать с ними. Ура, с Overmind можно дебажить.</strong>
+        p Но, главное, он <strong>запускает процессы в сессии <a href='https://tmux.github.io/', target='_blank'>tmux</a>, даёт возможность подключаться и взаимодействовать с ними</strong>. Ура, с Overmind можно дебажить.
 
         p Получается так:
         =image_tag "blog/overmind/overmind_session_screenshot.png", class: 'img-responsive'
@@ -43,7 +43,7 @@
 
         h3 Готовим Procfile
 
-        p Нужен такой же Procfile, как у Foreman или <a href='https://devcenter.heroku.com/articles/procfile'>Heroku</a>, например:
+        p Нужен такой же Procfile, как у Foreman или <a href='https://devcenter.heroku.com/articles/procfile', target='_blank'>Heroku</a>, например:
 
         blockquote
           |web: bin/rails server -p 3000<br>
@@ -78,7 +78,7 @@
         p Для других операционных систем инструкции по установке можно поискать здесь: https://github.com/tmux/tmux
 
         h3 overmind
-        p Скачать <a href='https://github.com/DarthSim/overmind/releases/latest'>последний релиз</a> и положить в /usr/local/bin
+        p Скачать <a href='https://github.com/DarthSim/overmind/releases/latest', target='_blank'>последний релиз</a> и положить в /usr/local/bin
 
         p Либо установить из исходников на Go:
         blockquote go get -u -f github.com/DarthSim/overmind
@@ -87,4 +87,4 @@
         h2 Hivemind?
         p Overmind делает работу с Procfile удобной, приводит в порядок общий лог, позволяет подключаться к отдельным процессам и дебажить.
 
-        p Если присоединяться к процессам нет необходимости, а аккуратный лог всё же хочется, то есть ещё <a href='https://github.com/DarthSim/hivemind'>hivemind</a>
+        p Если присоединяться к процессам нет необходимости, а аккуратный лог всё же хочется, то есть ещё <a href='https://github.com/DarthSim/hivemind', target='_blank'>hivemind</a>
