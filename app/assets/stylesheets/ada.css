@@ -564,7 +564,16 @@ fieldset[disabled] .navbar-ada .btn-link:focus {
 #single .comments,
 #single .related {
   background: #fff;
-  margin: 40px auto;
+
+  padding: 1em 2em;
+  -webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
+  -moz-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
+  box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
+}
+
+#single .section {
+  background: #fff;
+  margin: 10px auto;
   padding: 1em 2em;
   -webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
   -moz-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
