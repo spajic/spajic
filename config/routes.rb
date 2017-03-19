@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   scope controller: :home do
     get '/', action: 'index'
   end
+
+  scope controller: :blog_posts do
+    get '/blog/:post_slug', action: 'show'
+  end
 end
