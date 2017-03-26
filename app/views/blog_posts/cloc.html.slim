@@ -1,0 +1,59 @@
+#single
+  .container
+    .post
+      .caption.header
+        span.post-tag #utils
+        h1 cloc all the things или как посчитать строки
+        .fixed_height
+          =image_tag("blog/cloc/cloc.png", class: 'img-responsive')
+
+      .section
+        h2 Сколько строк кода в проекте? На каких языках?
+        p <a href='https://github.com/AlDanial/cloc', target='_blank'>cloc</a> ответит на все вопросы, он всё умеет:
+        ul
+          li строить отчёт по всем языкам, используемым в проекте
+          li отдельно учитывать пустые строки и комментарии
+          li считать только те файлы, которые добавлены в vcs (--vcs=git)
+          li анализировать заархивированные проекты
+          li выводить отчёт в plain text, json, yml, sql, xml
+          li много всего ещё, на <a href='https://github.com/AlDanial/cloc', target='_blank'>github</a> отличная документация
+
+      .section
+        h2 prepare
+
+        p Устанавливается cloc очень приятно:
+        ul
+          li npm install -g clog
+          li apt-get install cloc
+          li brew install cloc
+          li choco install cloc # даже на Windows через <a href='https://chocolatey.org/', target='_blank'>Chocolatey</a>
+          li или см. <a href='https://github.com/AlDanial/cloc', target='_blank', style='max-height: 300px'>github</a>
+
+      .section
+        h2 give it a try
+        blockquote cd project && cloc *
+
+        .fixed_height_300
+          =image_tag "blog/cloc/cloc_example.png", class: 'img-responsive'
+
+      .section
+        h2 cool cloc
+
+        h4 Опция vcs: cd project && cloc --vcs=git
+        p Не считаем тот код, что не попадает в репозиторий, в том числе node_modules
+
+        h4 Соотношение объёма кода и тестов
+        ul
+          li cd rails-project
+          li cloc app
+          li cloc test
+          li ...
+          li profit!
+
+        h4 Анализ заархивированного проекта
+        ul
+          li скачать архив с исходниками какого-нибудь гема с github с намерением почитать его исходники
+          li посчитать в нём строки
+          li ужаснуться и удалить, не распаковывая
+          li profit!
+

@@ -1,6 +1,6 @@
 ruby:
   img_1_tag = image_tag('blog/overmind/overmind_sketch.png', class: 'img-responsive')
-  img_2_tag = image_tag('photos/stub-2.jpg', class: 'img-responsive')
+  img_2_tag = image_tag('blog/cloc/cloc.png', class: 'img-responsive')
 
 #posts.container
   section.col-md-12
@@ -19,9 +19,9 @@ ruby:
     .post.big
       .row
         .col-md-6.caption
-          span.post-tag #продолжение
-          a.post-title И второй
-          span.post-date 28 февраля 2017
-          p.post-description Не терпится продолжить
+          span.post-tag #utils
+          = link_to 'cloc all the things или как посчитать строки',blog_post_path(post_slug: 'cloc'), class: 'post-title'
+          span.post-date 26 матра 2017
+          p.post-description Сколько строк кода в проекте? На каких языках? Cloc ответит на все все вопросы.
 
-        .col-md-6.media= img_2_tag
+        .col-md-6.media.caption= img_2_tag

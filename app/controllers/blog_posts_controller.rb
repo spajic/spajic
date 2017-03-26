@@ -4,6 +4,8 @@ class BlogPostsController < ApplicationController
     case post_slug
     when 'overmind'
       render 'overmind'
+    when 'cloc'
+      render 'cloc'
     end
   end
 end

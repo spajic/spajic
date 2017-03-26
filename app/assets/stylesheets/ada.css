@@ -580,6 +580,12 @@ fieldset[disabled] .navbar-ada .btn-link:focus {
   box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03);
 }
 
+#single .section .fixed_height_300 .img-responsive {
+  display: block;
+  max-height: 300px;
+  margin: auto;
+}
+
 #single .caption {
   padding-bottom: 40px;
 }
