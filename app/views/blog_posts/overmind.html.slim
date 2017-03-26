@@ -16,7 +16,6 @@
           li workers: фоновые задачи (например, resque workers)
           li scheduler: планировщик фоновых задач, (например, resque scheduler)
           li assets: процесс для сборки frontend'a (например, webpack-dev-server)
-          li watcher: процесс, отслеживающий изменения проекта (например, guard для тестов)
 
         p Удобно запускать, останавливать, перезапускать эти процессы одной командой и в одном терминале.
 
@@ -51,7 +50,6 @@
           |workers: bundle exec resque-pool --environment development<br>
           |scheduler: bin/rake resque:scheduler<br>
           |assets: bin/webpack-dev-server --config config/webpack.config.js<br>
-          |watcher: bundle exec guard<br>
 
 
         h3 Работаем с процессами
